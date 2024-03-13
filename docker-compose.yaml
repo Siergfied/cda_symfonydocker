@@ -1,0 +1,14 @@
+version: "3.8"
+
+services:
+    db_postgres:
+        container_name: cda_postgres
+        image: postgres:15-alpine
+        environment:
+            - POSTGRES_USER = root
+            - POSTGRES_PASSWORD = 1234
+            - POSTGRES_DB = SymfonyDocker
+        volumes:
+            - "./data/cda_postgres/SymfonyDocker:/var/lib/pgsql/data"
+        ports:
+            - "5432:5432"
